@@ -1,0 +1,53 @@
+<%-include("partials/header.ejs") %>
+
+
+<h1>Article</h1>
+    <!-- Hero Section  -->
+    
+    <div class="hero-section">
+        <a href="/love-the-cake %>">Love the cake</a>
+        <br>
+        <a href="/love-the-cake %>">Love the cake</a>
+
+        <% if(flag === 1){ %>
+            <% for(let i = 0; i < article.length; i++){ %>
+                <br><a href="/article/<%= i %>"> <%= locals.article[i].title %> </a> 
+               <!-- locals.article[i]["article"] %>       -->
+            <% } %>
+        <% }else{ %>
+            <h3>Add More Article</h3>
+        <% } %>
+       
+        
+    </div>
+
+
+    <hr>
+    <h2>Add New Article 👇🏻</h2>
+    <form action="/new-article" method="post">
+        <label for="Title">Title</label>
+        <br>
+        <input type="text" placeholder="Title" name="title">
+        <br>
+        <label for="Article">Article</label>
+        <br>
+        <!-- <input type="text" placeholder="Content" name="article"> -->
+        <textarea
+          type="text"
+          name="article"
+          placeholder="Your Blog here..."
+          rows="10"
+          cols="60"
+          required
+        ></textarea>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+
+
+
+
+
+<%-include("partials/footer.ejs") %>
+    

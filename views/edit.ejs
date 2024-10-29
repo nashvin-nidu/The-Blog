@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <h2>Add New Article 👇🏻</h2>
+    <form action="/article/:id/edited" method="post">
+        <label for="Title">Title</label>
+        <br>
+        <input type="text" placeholder="Title" name="title" value="<%= article.title %>">
+        <br>
+        <label for="Article">Article</label>
+        <br>
+        <!-- <input type="text" placeholder="Content" name="article"> -->
+        <textarea
+          type="text"
+          name="article"
+          placeholder="Your Blog here..."
+          rows="10"
+          cols="60"
+          required
+        ><%= article.content %></textarea>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
